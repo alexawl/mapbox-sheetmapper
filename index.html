@@ -101,7 +101,7 @@
       var map = new mapboxgl.Map({
         container: 'map', // container id
         style: "mapbox://styles/mapbox/satellite-streets-v11", //YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
-        center: [-81.30, 28.50], // starting position [lng, lat]
+        center: [-81.3454415, 28.5657965], // starting position [lng, lat]
         zoom: 9, // starting zoom
         transformRequest: transformRequest
       });
@@ -115,7 +115,7 @@
       function init() {
         Tabletop.init({
           // YOUR TURN: change 'key' value to point to your spreadsheet
-          key: 'https://docs.google.com/spreadsheets/d/14pXCsKTfhWjneDCyxHC5IwYTgxkdVtAEmBud89Yzbdw/edit?usp=sharing',
+          key: 'https://docs.google.com/spreadsheets/d/1Q5ORqm140jMnyKsNinkPsZg7mEu0e9ceBDllq0S3Uw0/edit?usp=sharing',
           // once Tabletop has loaded the data, it passes it to the 'callback' function, 'addPoints', defined below
           callback: addPoints,
           simpleSheet: true
@@ -132,14 +132,15 @@
 
           // create a variable for your popup and populate your popup with information from your table
           var popup = new mapboxgl.Popup()
-            .setHTML(`<h3>` + row.PROPERTY + `</h3>` + '<h4>' + '<b>' + 'LOCATION: ' + '</b>' + row.LOCATION + '</h4>' + '<h4>' + '<b>' + 'DESCRIPTION: ' + '</b>' + row.DESCRIPTION + '</h4>'); // use the table to populate your popup with text
+            .setHTML(`<h3>` + row.PROPERTY + `</h3>` + '<h4>' + '<b>' + 'AVAILABILITY: ' + '</b>' + row.AVAILABILITY + '</h4>' + '<h4>' + '<b>' + 'PRICING: ' + '</b>' + row.PRICING + '</h4>' + '<h4>' + '<b>' + 'COLLATERAL LINKS: ' + '</b>' + '<br>'+ '<a href="' + row.COLLATERAL_LINK_1 + '" target="_blank">LINK 1</a>' + '&nbsp;'+'&nbsp;' + '<a href="' + row.COLLATERAL_LINK_2 + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
+
 
 
           // create a variable for your markup and add it to the map 
           var marker = new mapboxgl.Marker({
               color: 'purple'
             })
-            .setLngLat([row.Longitude, row.Latitude])
+            .setLngLat([row.LONGITUDE, row.LATITUDE])
             .setPopup(popup)
             .addTo(map); // add the marker to the map
 
