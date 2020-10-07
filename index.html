@@ -101,7 +101,7 @@
       var map = new mapboxgl.Map({
         container: 'map', // container id
         style: "mapbox://styles/alexawl/ckfzn32t01fn31aooaoc3o2dm", //YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
-        center: [-122.1347298, 38.0167957], // starting position [lng, lat]
+        center: [-80.15195846557617, 26.011049644915765], // starting position [lng, lat]
         zoom: 9, // starting zoom
         transformRequest: transformRequest
       });
@@ -132,8 +132,7 @@
 
             // create a variable for your popup and populate your popup with information from your table
            var popup = new mapboxgl.Popup()
-            .setHTML(`<h3>` + row.NAME + `</h3>` 
-            + '<h4>' + '<b>' + 'ADDRESS: ' + '</b>' + row.ADDRESS + '</h4>' + '<h4>' + '<b>' + 'ZIP_CODE: ' + '</b>' + row.ZIP_CODE + '</h4>' + '<h4>' + '<b>' + 'DONATE: ' + '</b>' + '<br>'+ '<a href="' + row.DONATE + '" target="_blank">LINK 1</a>' + '&nbsp;'+'&nbsp;' + '<a href="' + row.COLLATERAL_LINK_2 + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
+            .setHTML("<h1>Hello World!</h1>"); // use the table to populate your popup with text
 
 
 
