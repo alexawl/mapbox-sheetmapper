@@ -130,14 +130,13 @@
 
         data.forEach(function(row) {
 
-          // create a variable for your popup and populate your popup with information from your table
+            // create a variable for your popup and populate your popup with information from your table
           var popup = new mapboxgl.Popup()
             .setHTML(`<h3>` + row.PROPERTY + `</h3>` + '<h4>' + '<b>' + 'AVAILABILITY: ' + '</b>' 
-                        + row.AVAILABILITY + '</h4>' + '<h4>' + '<b>' + 'PRICING: ' + '</b>' 
-                        + row.PRICING + '</h4>' + '<h4>' + '<b>' + 'COLLATERAL LINKS: ' + '</b>' 
-                        + '<br>'+ '<a href="' + row.COLLATERAL_LINK_1 + '" target="_blank">LINK 1</a>' 
-                        + '&nbsp;'+'&nbsp;' + '<a href="' + row.COLLATERAL_LINK_2 
-                        + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
+            + row.AVAILABILITY + '</h4>' + '<h4>' + '<b>' + 'PRICING: ' + '</b>' 
+            + row.PRICING + '</h4>' + '<h4>' + '<b>' + 'COLLATERAL LINKS: ' + '</b>' + '<br>'+ '<a href="' 
+            + row.COLLATERAL_LINK_1 + '" target="_blank">LINK 1</a>' + '&nbsp;'+'&nbsp;' + '<a href="' 
+            + row.COLLATERAL_LINK_2 + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
 
 
 
