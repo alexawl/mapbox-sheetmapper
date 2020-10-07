@@ -131,9 +131,14 @@
         data.forEach(function(row) {
 
             // create a variable for your popup and populate your popup with information from your table
-           var popup = new mapboxgl.Popup()
-            .setHTML("<h1>Hello World!</h1>"); // use the table to populate your popup with text
-
+          var popup = new mapboxgl.Popup()
+            .setHTML(`<h3>`+ row.ADDRESS + `</h3>` + `<h4>` + `<b>` 
+                +`<h4>`+`Viol_Des:  ` + row.VIOL_DES + `</h4>`+ `<b>`
+                +`<h4>`+`Section_Des: ` + row.SECTIO_DES +`</h4>`+`<b>`
+                +`<h4>`+`Originating_Off: ` + row.ORIGINATING_OFF + `</h4>`+ `<b>`  )
+                
+                
+                 // use the table to populate your popup with text
 
 
           // create a variable for your markup and add it to the map 
