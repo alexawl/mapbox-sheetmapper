@@ -115,7 +115,7 @@
       function init() {
         Tabletop.init({
           // YOUR TURN: change 'key' value to point to your spreadsheet
-          key: 'https://docs.google.com/spreadsheets/d/15ZOBSnLII28W716ekJSzpm2KMFmahDpUcq8MmqJbvsw/edit#gid=0',
+          key: 'https://docs.google.com/spreadsheets/d/15ZOBSnLII28W716ekJSzpm2KMFmahDpUcq8MmqJbvsw/edit?usp=sharing',
           // once Tabletop has loaded the data, it passes it to the 'callback' function, 'addPoints', defined below
           callback: addPoints,
           simpleSheet: true
@@ -132,7 +132,8 @@
 
             // create a variable for your popup and populate your popup with information from your table
            var popup = new mapboxgl.Popup()
-            .setHTML(`<h3>` + row.Name + `</h3>` + '<h4>' + '<b>' + 'Address: ' + '</b>' + row.Address + '</h4>' + '<h4>' + '<b>' + 'Zip_Code: ' + '</b>' + row.Zip_Code + '</h4>' + '<h4>' + '<b>' + 'Donate: ' + '</b>' + '<br>'+ '<a href="' + row.Donate + '" target="_blank">LINK 1</a>' + '&nbsp;'+'&nbsp;' + '<a href="' + row.COLLATERAL_LINK_2 + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
+            .setHTML(`<h3>` + row.NAME + `</h3>` 
+            + '<h4>' + '<b>' + 'ADDRESS: ' + '</b>' + row.ADDRESS + '</h4>' + '<h4>' + '<b>' + 'ZIP_CODE: ' + '</b>' + row.ZIP_CODE + '</h4>' + '<h4>' + '<b>' + 'DONATE: ' + '</b>' + '<br>'+ '<a href="' + row.DONATE + '" target="_blank">LINK 1</a>' + '&nbsp;'+'&nbsp;' + '<a href="' + row.COLLATERAL_LINK_2 + '" target="_blank">LINK 2</a></h4>'); // use the table to populate your popup with text
 
 
 
@@ -140,7 +141,7 @@
           var marker = new mapboxgl.Marker({
               color: 'purple'
             })
-            .setLngLat([row.Latitude, row.Longitude])
+            .setLngLat([row.LONGITUDE, row.LATITUDE])
             .setPopup(popup)
             .addTo(map); // add the marker to the map
 
